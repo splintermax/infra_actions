@@ -1,7 +1,8 @@
-from django.urls import path, include
+import django.urls
 from django.contrib import admin
 
 urlpatterns = [
-    path('', include('infra_app.urls', namespace='infra_app')),
-    path('admin/', admin.site.urls),
+    django.urls.path('', django.urls.include('infra_app.urls',
+                                             namespace='infra_app')),
+    django.urls.path('admin/', admin.site.urls),
 ]
